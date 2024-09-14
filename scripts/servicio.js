@@ -12,17 +12,17 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     if (tipo === 'dni') {
         if (valor.length !== 8 || !/^\d+$/.test(valor)) {
             isValid = false;
-            message = 'El DNI debe tener 8 dígitos';
+            message = 'Debe completar correctamente sus credenciales';
         }
     } else if (tipo === 'cex') {
         if (valor.length !== 10 || !/^[a-zA-Z0-9]+$/.test(valor)) {
             isValid = false;
-            message = 'El CEX debe tener 10 caracteres alfanuméricos';
+            message = 'Debe completar correctamente sus credenciales';
         }
     } else if (tipo === 'pas') {
         if (valor.length !== 12 || !/^\d+$/.test(valor)) {
             isValid = false;
-            message = 'El PAS debe tener 12 digitos numéricos';
+            message = 'Debe completar correctamente sus credenciales';
         }
     }
 
@@ -53,7 +53,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
                 }
             })
             .catch(error => {
-                document.getElementById('result').innerHTML = '<div class="alert alert-danger">Error de conexión: ' + error.message + '</div>';
+                document.getElementById('result').innerHTML = '<div class="alert alert-danger">Ocurrió un problema en la autenticación' + '</div>';
             });
     }
 });

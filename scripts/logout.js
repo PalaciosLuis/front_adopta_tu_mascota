@@ -11,8 +11,22 @@ document.getElementById('logout').addEventListener('click', function () {
             if (response.ok) {
 
                 console.log(response.id);
+                function limpiarDatos() {
+
+                    sessionStorage.clear();
+
+
+                    localStorage.clear();
+
+                    console.log("Datos de sesión y localStorage han sido limpiados");
+                }
+
+
+                limpiarDatos();
+
 
                 window.location.href = "index.html";
+
             } else {
                 alert("Error al cerrar sesión. Inténtalo de nuevo.");
             }
